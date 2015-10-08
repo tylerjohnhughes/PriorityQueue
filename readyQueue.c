@@ -10,6 +10,6 @@ void PriorityQueue_enqueue(PriorityQueue *queue, PCB *pcb) {
     
 }
 
-void PriorityQueue_traverse(PriorityQueue *queue) {
+void PriorityQueue_traverse(const PriorityQueue *queue) {
     
 }
