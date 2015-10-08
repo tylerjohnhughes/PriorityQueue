@@ -34,11 +34,9 @@ typedef struct priority_queue {
 } PriorityQueue;
 
 
-PCB *PriorityQueue_dequeue(PriorityQueue *queue);
+PCB *PriorityQueue_dequeue(PriorityQueue *);
 
-void PriorityQueue_enqueue(PriorityQueue *queue, PCB *pcb);
-
-void PriorityQueue_traverse(const PriorityQueue *queue);
+void PriorityQueue_enqueue(PriorityQueue *queue, const PCB *pcb);
 
 
-#endif
+#endif // READY_QUEUE_H
