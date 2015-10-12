@@ -37,5 +37,9 @@ int getPriority(void) {
 }
 
 void traverse(PriorityQueue *queue) {
-    
+    PCB pcb = PriorityQueue_Dequeue(queue);
+	while(pcb != NULL){
+		printf("Process ID %d, with priority %d/n", pcb.processID, pcb.priority);
+		pcb = PriorityQueue_Dequeue(queue);
+	}
 }
