@@ -4,7 +4,7 @@
 #define PRIORITY_CLASSES 64
 
 
-typedef enum state_types {
+typedef enum {
     NEW,
     READY,
     RUNNING,
@@ -34,9 +34,9 @@ typedef struct priority_queue {
 } PriorityQueue;
 
 
-PCB *PriorityQueue_dequeue(PriorityQueue *);
+PCB *PriorityQueue_dequeue(PriorityQueue *queue);
 
-void PriorityQueue_enqueue(PriorityQueue *queue, const PCB *pcb);
+void PriorityQueue_enqueue(PriorityQueue *queue, PCB *pcb);
 
 
 #endif // READY_QUEUE_H

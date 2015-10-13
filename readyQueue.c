@@ -1,30 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "readyQueue.h"
 
 
 PCB *PriorityQueue_dequeue(PriorityQueue *queue) {
     int i = 0;
-	while(i<64){
-		if(queue->queues[i].head != NULL){
-			PCB *toReturn = queue->queues[i].head->pcb;
+	while (i < PRIORITY_CLASSES) {
+		while (queue->queues[i].head != NULL) {
+            PCBNode *node = queue->queues[i].head;
+			PCB *pcb = node->pcb;
 			queue->queues[i].head = queue->queues[i].head->next;
-			return toReturn;
+            free(node);
+			return pcb;
 		}
 		i++;
 	}
 	return NULL;
 }
 
-void PriorityQueue_enqueue(PriorityQueue *queue, const PCB *pcb) {
-	PCBNode *pcbn;
+void PriorityQueue_enqueue(PriorityQueue *queue, PCB *pcb) {
+	PCBNode *pcbn = (PCBNode *) malloc(sizeof(PCBNode));
 	pcbn->pcb = pcb;
 	pcbn->next = NULL;
 	int i = pcb->priority;
-	if(queue->queues[i].head == queue->queues[i].tail == NULL ){
-		queue->queues[i].head = queue->queues[i].tail = pcbn;
-	}else{
-		queue->queues->tail->next = pcbn;
-		queue->queues->tail = pcbn;
+	if (queue->queues[i].tail == NULL) {
+        queue->queues[i].head = pcbn;
+        queue->queues[i].tail = pcbn;
+	} else {
+		queue->queues[i].tail->next = pcbn;
+		queue->queues[i].tail = pcbn;
 	}
-
 }

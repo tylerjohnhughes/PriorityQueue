@@ -9,7 +9,7 @@ void traverse(PriorityQueue *queue);
 
 
 int main(int argc, char *argv[]) {
-    PriorityQueue readyQueue;
+    PriorityQueue readyQueue = {};
     int processID = 0;
     
     int priority = getPriority();
@@ -37,9 +37,9 @@ int getPriority(void) {
 }
 
 void traverse(PriorityQueue *queue) {
-    PCB pcb = PriorityQueue_dequeue(queue);
+    PCB *pcb = PriorityQueue_dequeue(queue);
 	while(pcb != NULL){
-		printf("Process ID %d, with priority %d/n", pcb->processID, pcb->priority);
+		printf("Process ID %d, with priority %d\n", pcb->processID, pcb->priority);
 		pcb = PriorityQueue_dequeue(queue);
 	}
 }
