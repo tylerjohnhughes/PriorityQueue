@@ -1,3 +1,9 @@
+/**
+ * readyQueue.c
+ *
+ * @author Tyler Hughes, Harman Bains, Tan Pham
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "readyQueue.h"

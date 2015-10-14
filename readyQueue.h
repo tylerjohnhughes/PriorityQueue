@@ -1,3 +1,9 @@
+/**
+ * readyQueue.h
+ *
+ * @author Tyler Hughes, Harman Bains, Tan Pham
+ */
+
 #ifndef READY_QUEUE_H
 #define READY_QUEUE_H
 
