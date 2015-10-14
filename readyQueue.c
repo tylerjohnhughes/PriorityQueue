@@ -37,3 +37,17 @@ void PriorityQueue_enqueue(PriorityQueue *queue, PCB *pcb) {
 		queue->queues[i].tail = pcbn;
 	}
 }
+
+PCB *PriorityQueue_peekProcess(PriorityQueue *queue, int processID) {
+    PCBNode *curr;
+    for (int i = 0; i < PRIORITY_CLASSES; ++i) {
+        curr = queue->queues[i].head;
+        while (curr != NULL) {
+            if (curr->pcb->processID == processID) {
+                return curr->pcb;
+            }
+            curr = curr->next;
+		}
+    }
+    return NULL;
+}
