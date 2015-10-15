@@ -20,19 +20,15 @@ typedef enum {
 
 
 typedef struct pcb {
+    struct pcb *next;
     int processID;
     int priority;
     StateType state;
 } PCB;
 
-typedef struct pcb_node {
-    PCB *pcb;
-    struct pcb_node *next;
-} PCBNode;
-
 typedef struct fifo_queue {
-    PCBNode *head;
-    PCBNode *tail;
+    PCB *head;
+    PCB *tail;
 } FIFOQueue;
 
 typedef struct priority_queue {

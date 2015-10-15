@@ -50,7 +50,7 @@ void traverse(PriorityQueue *queue) {
     int i = 0;
     pcb = PriorityQueue_peekProcess(queue, i++);
     while (pcb != NULL) {
-        printf("Process ID %d, with priority %d\n", pcb->processID, pcb->priority);
+        printf("Process ID: %d\tPriority %d\n", pcb->processID, pcb->priority);
         pcb = PriorityQueue_peekProcess(queue, i++);
     }
     
@@ -58,7 +58,7 @@ void traverse(PriorityQueue *queue) {
     printf("\nProcesses (Priority ASC):\n");
     pcb = PriorityQueue_dequeue(queue);
 	while (pcb != NULL){
-		printf("Process ID %d, with priority %d\n", pcb->processID, pcb->priority);
+		printf("Process ID: %d\tPriority %d\n", pcb->processID, pcb->priority);
 		pcb = PriorityQueue_dequeue(queue);
 	}
 }
