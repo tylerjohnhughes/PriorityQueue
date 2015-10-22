@@ -1,7 +1,7 @@
 /**
  * readyQueue.c
  *
- * @author Tyler Hughes, Harman Bains, Tan Pham
+ * @author Tyler Hughes, Audrey Chavarria
  */
 
 #include <stdio.h>

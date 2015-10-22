@@ -1,7 +1,7 @@
 /**
  * readyQueue.h
  *
- * @author Tyler Hughes, Harman Bains, Tan Pham
+ * @author Tyler Hughes, Audrey Chavarria
  */
 
 #ifndef READY_QUEUE_H
